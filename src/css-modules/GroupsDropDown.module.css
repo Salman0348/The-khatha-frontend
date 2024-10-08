@@ -1,0 +1,46 @@
+.dropDownContainer {
+  position: relative;
+}
+.menu {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  width: 170px;
+  height: 37px;
+  text-wrap: nowrap;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: var(--white-color);
+  border: var(--sub-border);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hideMenu {
+  display: none;
+}
+.newGroupBtn:hover {
+  color: var(--subLeading-color);
+}
+.threeDots {
+  width: 25px;
+  height: 25px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.threeDots:hover {
+  transform: scale(1.15);
+}
+.threeDotsCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+.openColor {
+  background-color: #dadada;
+}

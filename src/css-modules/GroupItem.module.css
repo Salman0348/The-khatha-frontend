@@ -1,0 +1,145 @@
+.groupItem {
+  display: flex;
+  width: 90%;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0.9rem 1.3rem 0.8rem;
+  padding: 0.5rem 0.3rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 5px;
+  cursor: default;
+  position: relative;
+}
+.selected {
+  background-color: #e3dddd;
+}
+.noHover.selected:hover {
+  background-color: #e3dddd; /* Same as selected state to disable hover */
+}
+.groupItem:hover {
+  background-color: #eee;
+}
+.leftSection {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.leftSection:active {
+  transform: scale(0.97);
+}
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  max-width: calc(100% - 75px);
+}
+
+.upperGroupInfo {
+  position: relative;
+}
+.amountOwed {
+  font-weight: bold;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  color: var(--leading-color);
+  cursor: pointer;
+}
+
+.groupName {
+  font-size: 1.25rem;
+  font-weight: 500;
+  max-width: 210px;
+  max-width: 80%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lastEntryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.lastEntryMemberName {
+  max-width: 30%;
+  display: block;
+  height: fit-content;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+.purposeAndAmount {
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: flex;
+}
+.purpose {
+  max-width: 40%;
+  display: inline-block;
+  margin-right: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.amount {
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dateAndTime {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.lastEntryTitles {
+  font-weight: 600;
+}
+
+/* media quries */
+@media (max-width: 480px) {
+  .leftSection {
+    width: 60px;
+    height: 60px;
+  }
+  .rightSection {
+    gap: 0;
+  }
+  .groupName {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .lastEntryInfo {
+    gap: 0;
+  }
+  .lastEntryTitles {
+    font-weight: 500;
+  }
+  .purposeAndAmount {
+    font-size: 0.9rem;
+  }
+  .lastEntryMemberName {
+    margin-right: 0rem;
+  }
+  .amountOwed {
+    font-size: 1.1rem;
+  }
+  .amountDigits {
+    padding: 0;
+    line-height: normal;
+  }
+  .dateAndTime {
+    font-size: 0.8rem;
+  }
+}

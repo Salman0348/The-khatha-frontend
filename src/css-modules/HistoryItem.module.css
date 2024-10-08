@@ -1,0 +1,40 @@
+.historyItem {
+  padding: 1rem 1rem 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+.itemSubDiv {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+.itemHeading {
+  display: flex;
+  justify-content: space-between;
+}
+.entryNo {
+  font-weight: bold;
+}
+.entryTime {
+  font-size: 0.8rem;
+}
+.dividerline {
+  margin-bottom: 0;
+}
+
+.generatePdfBtnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+.generatePdfBtn {
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  background-color: var(--leading-color);
+  color: var(--white-color);
+  border: none;
+  transition: all 0.03s;
+}
+.generatePdfBtn:active {
+  transform: scale(0.97);
+}

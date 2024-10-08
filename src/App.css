@@ -1,0 +1,26 @@
+:root {
+  --leading-color: rgb(75, 75, 200);
+  --subLeading-color: #7dc84b;
+  --white-color: #ffffff;
+  --attention-color: #fff8c5;
+  --error-color: #ff0000;
+  --attention-border-color: #d4a72c66;
+  --attention-icon-color: #9a6700;
+  --leading-border: 1.4px solid rgba(0, 0, 0, 0.16);
+  --sub-border: 1px solid rgba(0, 0, 0, 0.16);
+  --box-shadow1: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  --box-shadow2: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+p {
+  margin-bottom: 0;
+}
+h3 {
+  margin: 0;
+}

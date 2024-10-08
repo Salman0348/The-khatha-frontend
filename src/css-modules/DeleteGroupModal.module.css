@@ -1,0 +1,158 @@
+.deleteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleteBtnSpinner {
+  width: 25px;
+  height: 25px;
+}
+.groupImgNameDiv {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 100%;
+}
+.groupImgDiv {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.groupImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.deleteMdlBdyCon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.warningCon {
+  margin-top: 1rem;
+}
+.warningHeading {
+  display: flex;
+  gap: 0.1rem;
+  justify-content: center;
+  align-items: end;
+  background-color: var(--attention-color);
+  border: 1px solid var(--attention-border-color);
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+}
+.warningAttentionMssg {
+  font-size: 0.9rem;
+  text-align: center;
+  width: fit-content;
+}
+.warningIconSpan {
+  color: var(--attention-icon-color);
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.warningMssg {
+  font-size: 0.9rem;
+  padding: 1rem 0.2rem 1rem 1rem;
+  max-width: 450px;
+}
+
+.deletePopUp {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  box-shadow: var(--box-shadow1);
+  background-color: var(--white-color);
+  border: var(--sub-border);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  max-width: 90%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.deletePopUpBody {
+  padding: 0.7rem 1rem 1rem 1rem;
+}
+.deletePopUpBtns {
+  display: flex;
+  justify-content: end;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  border-top: var(--sub-border);
+}
+.deleteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirmGrpName {
+  font-weight: 500;
+}
+
+.grpNameInput {
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid var(--leading-color);
+  border-radius: 7px;
+  font-size: 0.9rem;
+}
+.grpNameMatchesErrDiv {
+  height: 0.4rem;
+}
+.grpNameMatchesErr {
+  color: red;
+  font-size: 0.9rem;
+  position: absolute;
+  margin-left: 0.3rem;
+}
+.deleteGroupSpinner {
+  width: 21px;
+  height: 21px;
+}
+.groupName {
+  width: calc(100% - 60px);
+}
+
+/* media qureies */
+@media (max-width: 480px) {
+  .groupImgNameDiv {
+    padding: 1rem 0rem 0 0rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .warningHeading {
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .warningAttentionMssg {
+    font-size: 0.85rem;
+  }
+  .warningMssg {
+    font-size: 0.9rem;
+  }
+  .deletePopUp {
+    font-size: 1rem;
+  }
+  .grpNameInput {
+    margin-top: 0.5rem;
+    font-size: inherit;
+  }
+  .grpNameMatchesErr {
+    font-size: inherit;
+  }
+}

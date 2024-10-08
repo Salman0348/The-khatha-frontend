@@ -1,0 +1,255 @@
+.dashboardContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.groupSection {
+  height: 100%;
+  float: left;
+  border-right: 1.4px solid rgba(0, 0, 0, 0.16);
+  z-index: 1;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 30%;
+}
+.scrollBar::-webkit-scrollbar {
+  display: none;
+}
+.scrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.memberSection {
+  float: left;
+  height: 100%;
+  float: left;
+  background-color: #eee;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.memberSectionSmallWidth {
+  width: 45%;
+}
+.memberSectionLargeWidth {
+  width: 70%;
+}
+.memberListOnShowedHistory {
+  margin: 6rem auto 4rem auto;
+  width: fit-content;
+}
+.memberListOnHiddenHistory {
+  columns: 2;
+  column-gap: 2rem;
+  height: fit-content;
+  margin: 6rem auto 2rem auto;
+  width: fit-content;
+}
+
+.historySection {
+  float: left;
+  height: calc(100% - 3.5rem);
+  margin-top: 3.5rem;
+  border-left: 1.4px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 25%;
+}
+.noEntriesDivOrSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* scroll bar for webkit */
+.historySection::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.historySection::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
+.memberSection::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.memberSection::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
+.historyBtn {
+  position: absolute;
+  right: 36px;
+  top: 12px;
+  z-index: 1;
+  width: 120px;
+  height: 32px;
+  background-color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 5px;
+}
+.historyBtn:active {
+  background-color: #e5e4e4;
+}
+.showHistoryBtnDiv {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.groupListHeading {
+  padding: 0.5rem 0.7rem;
+  height: 3.43rem;
+  width: calc(30% - 1.4px);
+  background-color: var(--white-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+}
+.headingName {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.groupListDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 4.5rem auto 2rem;
+}
+.grpMemsInstMssg {
+  margin: 2rem;
+}
+.noGroupsDiv {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.noGroupsBtn {
+  background-color: var(--leading-color);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.1s;
+}
+.noGroupsBtn:active {
+  transform: scale(0.97);
+}
+.groupsFetchingSpinner {
+  width: 25px;
+  height: 25px;
+}
+/* Desktop layout */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .group-list {
+    width: 30vw;
+    border-right: 1px solid #ccc;
+  }
+
+  .member-list {
+    width: 70vw;
+  }
+
+  /* In desktop view, both sections are visible */
+  .group-list,
+  .member-list {
+    display: block;
+  }
+}
+@media (max-width: 1100px) {
+  .memberListOnHiddenHistory {
+    columns: 1;
+    column-gap: 0;
+  }
+  .historySection {
+    position: absolute;
+    right: 0;
+    width: 40%;
+    min-width: 300px;
+    max-width: 360px;
+    background-color: var(--white-color);
+  }
+  .groupSection {
+    width: 40%;
+  }
+  .memberSectionSmallWidth,
+  .memberSectionLargeWidth {
+    width: 60%;
+  }
+  .groupListHeading {
+    width: calc(40% - 1.5px);
+  }
+  .historyBtn {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .historyBtn {
+    position: absolute;
+    width: 60px;
+    font-size: 0.9rem;
+    height: 30px;
+    top: 12px;
+  }
+  .hiddenPartOfHistoryOnMobile {
+    display: none;
+  }
+}
+/* Mobile layout */
+@media (max-width: 767px) {
+  .groupListHeading {
+    width: 100%;
+    height: 3rem;
+  }
+  .headingName {
+    font-size: 1.3rem;
+  }
+  .groupListDiv {
+    margin: 4rem auto 8rem;
+  }
+  /* For the mobile view, we hide one section at a time */
+  .showGroups .memberSection {
+    display: none;
+  }
+  .showMembers .groupSection {
+    display: none;
+  }
+  .groupSection,
+  .memberSectionSmallWidth,
+  .memberSectionLargeWidth {
+    width: 100%;
+  }
+  .historySection {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: var(--white-color);
+  }
+}

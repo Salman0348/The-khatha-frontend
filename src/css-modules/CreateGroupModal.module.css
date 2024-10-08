@@ -1,0 +1,155 @@
+.creatBtnTxt {
+  transition: all 0.15s ease-in-out;
+}
+.creatBtnTxt:hover {
+  font-weight: 600;
+}
+.image {
+  width: 80px;
+  border-radius: 50%;
+}
+.imgWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+.inputItem {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+}
+.inputItem input {
+  width: 100%;
+  max-width: 320px;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid var(--leading-color);
+  border-radius: 7px;
+  font-size: 0.9rem;
+}
+
+.addMemBtn {
+  position: static;
+  background-color: var(--leading-color);
+  color: var(--white-color);
+  border: none;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addMemberDiv {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.memsOutCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.memsCon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 1rem;
+  color: var(--subLeading-color);
+}
+.singleNameCon {
+  border-radius: 5px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0rem 0.2rem;
+}
+.creatBtn,
+.confirmBtn {
+  background-color: var(--leading-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.creatBtn,
+.closeBtn,
+.confirmBtn,
+.backBtn {
+  height: 2.33rem;
+  border: none;
+}
+.createPopUp {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  box-shadow: var(--box-shadow1);
+  background-color: var(--white-color);
+  border: var(--sub-border);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  min-width: 250px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.createPopUpBtns {
+  display: flex;
+  justify-content: end;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  border-top: var(--sub-border);
+}
+.createPopUpBody {
+  padding: 0.7rem 1rem 1rem 1rem;
+}
+.MemslmtExcdMssg {
+  font-size: 0.9rem;
+  color: red;
+  width: 100%;
+  text-align: center;
+}
+
+.addMemberSpinner {
+  width: 25px;
+  height: 25px;
+}
+.removeMembCross:hover {
+  background-color: #dee2e6;
+}
+.createGroupSpinner {
+  width: 20px;
+  height: 20px;
+}
+.confirGroupCreationHeader {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.confirGroupCreationFields {
+  font-size: 1rem;
+  margin-left: 0.4rem;
+}
+.confirGroupCreationFieldsTitles {
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+
+/* media qureries */
+@media (max-width: 520px) {
+  .imgWrap {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+  }
+  .memsCon {
+    margin: 0.5rem;
+  }
+  .memberName {
+    font-size: 0.9rem;
+  }
+}

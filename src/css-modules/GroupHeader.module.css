@@ -1,0 +1,83 @@
+.groupImgDiv {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem 0 0.5rem;
+}
+.outerDiv {
+  background-color: white;
+  height: 3.5rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-bottom: 1.4px solid rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.groupImg {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.grpNameSpan {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.backBtnDiv {
+  background-color: #dadada;
+  width: 0.8rem;
+  height: 100%;
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.backBtnDiv:hover {
+  background-color: #c2bdc7;
+}
+.backBtnDiv:active {
+  background-color: #dadada;
+}
+.leftArrow {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+/* media qureis */
+@media (max-width: 590px) {
+  .groupImgDiv {
+    margin: 0 0.3rem 0 0.3rem;
+  }
+  .grpNameSpan {
+    font-size: 1rem;
+    width: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1050px) {
+  .grpNameSpan {
+    font-size: 1rem;
+    width: 37%;
+  }
+  .groupImgDiv {
+    margin: 0 0.3rem 0 0.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .backBtnDiv {
+    width: 1.5rem;
+  }
+  .leftArrow {
+    width: 35px;
+    height: 35px;
+  }
+}

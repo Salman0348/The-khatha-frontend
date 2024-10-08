@@ -1,0 +1,38 @@
+.mainCon {
+  padding: 4rem 2rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.tryAgainSpan {
+  color: var(--subLeading-color);
+  color: black;
+}
+.messageP {
+  text-align: center;
+}
+.successMessageDiv,
+.errorMessageDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.successIconDiv {
+  font-size: 120px;
+  color: var(--subLeading-color);
+}
+.errorIconDiv {
+  font-size: 120px;
+  color: var(--error-color);
+}
+
+/* media queries */
+@media (max-width: 520px) {
+  .successIconDiv,
+  .errorIconDiv {
+    font-size: 100px;
+  }
+}

@@ -1,0 +1,60 @@
+.groupListSkeleton {
+  margin-top: 4.6rem;
+}
+.groupItemSkeleton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  width: 93%;
+  margin: 0 0.9rem 1.3rem 0.8rem;
+  animation: fadeIn 1.5s ease-in-out infinite;
+}
+
+.groupItemSkeleton .skeletonCircle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: var(--skeleton-color, #d7d6d6);
+  margin-right: 10px;
+}
+
+.groupItemSkeleton .skeletonLine {
+  height: 15px;
+  background-color: var(--skeleton-color, #d7d6d6);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.groupItemSkeleton .groupNameSkeleton {
+  width: 150px;
+}
+
+.groupItemSkeleton .lastEntrySkeleton {
+  width: 100px;
+}
+
+.groupItemSkeleton .dateSkeleton {
+  width: 80px;
+}
+
+.groupItemSkeleton .amountOwedSkeleton {
+  width: 60px;
+  height: 20px;
+  margin-left: auto;
+  border-radius: 12px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}

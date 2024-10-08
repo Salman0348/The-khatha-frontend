@@ -1,0 +1,237 @@
+.con {
+  position: sticky;
+  bottom: 3rem;
+  right: 2rem;
+  width: fit-content;
+  align-self: end;
+  display: flex;
+  justify-content: end;
+  border-radius: 5px;
+}
+.addEntryCon {
+  margin-right: 2rem;
+  margin-right: 0rem;
+  margin-top: 3.7rem;
+  margin-top: 0rem;
+  width: fit-content;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow1);
+}
+.addEntryBtn {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background-color: var(--leading-color);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+}
+.addEntryBtn:active {
+  background-color: rgb(113 113 207);
+}
+.addEntryFormCon {
+  background-color: var(--white-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  border: var(--sub-border);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.addEntryFormCon.open {
+  min-height: 23rem;
+  height: fit-content;
+  width: 21rem;
+}
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 90%;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+.entryForm .priceInputIem,
+.purposeInputIem {
+  height: 2.5rem;
+  padding-left: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid var(--leading-color);
+}
+.entryForm textarea {
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  border: 1px solid var(--leading-color);
+  resize: none;
+}
+.heading {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.addBtnCon {
+  align-self: flex-end;
+  position: absolute;
+  right: 1rem;
+  bottom: 6rem;
+  transition: right 0.3s, bottom 0.3s;
+}
+.addBtnCon:active {
+  transform: scale(0.97);
+}
+.addBtnCon button {
+  padding: 0.3rem 0.5rem;
+  background-color: rgb(98 98 184);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+  width: 6rem;
+  height: 2rem;
+}
+.addBtnCon button:hover {
+  background-color: var(--leading-color);
+}
+.addBtnCon.buttonMoved {
+  position: absolute;
+  right: 4.5rem;
+  bottom: 0.5rem;
+}
+/* Hide spinner controls in WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinner controls in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield; /* Standard property for compatibility */
+}
+
+.customParticipatantBtnDiv {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.checkBox {
+  width: 15px;
+  height: 15px;
+}
+.cstmPrtcpntAndAddEntryBtnDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.inputOfPrtcpntDiv {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.participantAmountInput {
+  width: 5rem;
+  padding-left: 0.3rem;
+  border: none;
+  border-bottom: 1px solid var(--leading-color);
+  outline: none;
+}
+.customParticipantDiv {
+  min-height: 6rem;
+}
+.addParticipantBtnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addParticipantBtn {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: var(--leading-color);
+  color: var(--white-color);
+  border-radius: 50%;
+}
+.addParticipantBtn:active {
+  transform: scale(0.9);
+}
+.participantsSelect {
+  border: none;
+  border-bottom: 1px solid var(--leading-color);
+  outline: none;
+}
+.participantsSelect,
+.participantAmountInput {
+  height: 2rem;
+}
+.selectedParticipantsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding: 0.3rem 0rem 4rem 0rem;
+}
+
+.removeParticipantCross:hover {
+  background-color: #dee2e6;
+}
+.selectedParticipantNameSpan {
+  color: var(--subLeading-color);
+}
+.participantErroP {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.addEntrySpinner {
+  width: 22px;
+  height: 22px;
+}
+
+/* media quries */
+@media (max-width: 480px) {
+  .con {
+    right: 0.8rem;
+    bottom: 6rem;
+  }
+  .addEntryFormCon.open {
+    width: 18rem;
+  }
+  .addBtnCon {
+    right: 0.6rem;
+  }
+  .addBtnCon button {
+    padding: 0.3rem 0.3rem;
+    font-size: 0.9rem;
+    width: 5rem;
+  }
+  .selectedParticipantNameSpan {
+    font-size: 0.9rem;
+  }
+  .participantErroP {
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+  .selectedParticipantsDiv {
+    gap: 0.5rem;
+    padding: 0rem 0rem 4rem 0rem;
+  }
+  .customParticipantDiv {
+    margin-top: -0.7rem;
+  }
+  .entryForm {
+    width: 93%;
+  }
+}

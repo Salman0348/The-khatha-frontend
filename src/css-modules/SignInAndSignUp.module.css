@@ -1,0 +1,272 @@
+.completeScreen {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.signInCard {
+  background-color: #fff;
+  width: 43rem;
+  height: 34rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  display: flex;
+}
+.welcomeMessage {
+  background-color: rgb(75, 75, 200);
+  width: 40%;
+  height: 100%;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  position: relative;
+}
+.welcomeMessage h1 {
+  font-size: 1.5rem;
+}
+.welcomeMessage p {
+  font-size: 0.9rem;
+}
+.hr {
+  height: 5px;
+  border: none;
+  background-color: #48c748;
+  border-radius: 5px;
+  width: 70%;
+  opacity: 1;
+}
+.logo {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.5rem;
+}
+.logoImg {
+  width: 30px;
+}
+.SignInInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 60%;
+}
+.signInTitle {
+  margin-bottom: 2rem;
+}
+.SignInForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+}
+.SignInForm input {
+  height: 2.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  border: 1px solid rgb(75, 75, 200);
+  border-radius: 7px;
+}
+.SignInBtn {
+  background: #48c748;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  height: 2.5rem;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SignInBtn:hover {
+  background-color: #7dc84b;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid rgb(75, 75, 200);
+}
+.SignUpMessage a {
+  text-decoration: none;
+}
+.SignUpMessage {
+  margin-top: 1rem;
+}
+.SignInMessage a {
+  text-decoration: none;
+}
+.error {
+  color: red;
+  height: fit-content;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+.signinPasswordDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0rem;
+  transition: margin-bottom 0.2s ease;
+}
+.signinPasswordDiv input {
+  width: 100%;
+  padding-right: 2rem;
+}
+.passwordDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0rem;
+  transition: margin-bottom 0.2s ease;
+}
+.passwordDiv input {
+  width: 100%;
+  padding-right: 2rem;
+}
+.eyeIconSpan {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.passwordLable {
+  font-size: 0.8rem;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+  position: absolute;
+  bottom: -20px;
+  visibility: hidden;
+  transition: visibility 0.1s ease;
+}
+.passwordDiv input:focus + .passwordLable {
+  visibility: visible;
+}
+.passwordDiv:focus-within {
+  margin-bottom: 1rem;
+}
+.verificationEmailSentMssgP {
+  font-size: 0.9rem;
+  background-color: #fb7341;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  color: black;
+}
+.resendEmailSpan {
+  font-size: 0.8rem;
+  color: blue;
+  cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  margin-left: 0.3rem;
+  border-radius: 3px;
+}
+.isResendEmailSpinnerDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.isResendEmailSpinner {
+  width: 15px;
+  height: 15px;
+}
+
+/* media quries*/
+/* Styles for phones */
+@media (max-width: 576px) {
+  .signInCard {
+    width: 90%;
+    height: fit-content;
+    min-height: 30rem;
+    flex-direction: column-reverse;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .welcomeMessage {
+    align-items: center;
+    gap: 0rem;
+    width: 100%;
+    flex: 1;
+    min-height: 6rem;
+  }
+  .SignInInfo {
+    margin: 1rem 0 0.5rem 0;
+    flex: 1;
+    width: 100%;
+  }
+  .logo {
+    top: 100%;
+    left: 100%;
+    transform: translate(-150%, -150%);
+  }
+  .welcomeMessage p {
+    text-align: center;
+  }
+  .welcomeMessage h1 {
+    margin-bottom: 0rem;
+  }
+  .SignInForm {
+    gap: 0.7rem;
+    width: 90%;
+  }
+  .SignInForm input {
+    height: 2.5rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border: 1px solid rgb(75, 75, 200);
+    border-radius: 7px;
+  }
+  .SignInMessage {
+    font-size: 0.9rem;
+  }
+  .welcomeMessageP {
+    display: none;
+  }
+  .hr {
+    display: none;
+  }
+  .welcomeMessageTitle {
+    font-size: 1.1rem !important;
+  }
+  .SignInBtn {
+    margin-top: 1rem;
+  }
+}
+
+/* Styles for tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .signInCard {
+    width: 90vw;
+  }
+  .SignInForm {
+    width: 85%;
+  }
+  .welcomeMessage {
+    padding: 0 1rem;
+  }
+}
+
+/* Styles for laptops and desktops */
+@media (min-width: 993px) {
+  .signInCard {
+    width: 49rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .completeScreen {
+    overflow: scroll;
+  }
+}

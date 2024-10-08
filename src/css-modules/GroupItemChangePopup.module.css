@@ -1,0 +1,99 @@
+.groupChangePopup {
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  background-color: var(--white-color);
+  min-width: 15rem;
+  height: fit-content;
+  border: var(--sub-border);
+  box-shadow: var(--box-shadow2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 2;
+  border-radius: 3px;
+}
+.hideGroupChangePopup {
+  display: none;
+}
+.groupImgNameDiv {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 150px;
+  text-wrap: nowrap;
+  padding: 1rem 1rem 0 1rem;
+}
+.groupImgDiv {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.groupNameSpan {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.groupImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.popupDivider {
+  margin: 0.7rem 1rem;
+  height: 1.5px;
+  background-color: #343a40;
+}
+.grpList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+.grpList li {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.liIconsCon {
+  background-color: #e9ecef;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.liSpan {
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.liSpan:hover {
+  font-weight: 600;
+}
+.deleteGrpLi {
+  color: gray;
+}
+
+.notAdminMssg {
+  color: red;
+  font-weight: normal;
+}
+
+/* media queries */
+@media (max-width: 480px) {
+  .groupChangePopup {
+    top: 3rem;
+    left: 0.5rem;
+    max-width: 90vw;
+    min-width: 80vw;
+  }
+}

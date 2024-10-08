@@ -1,0 +1,143 @@
+.headerContainer {
+  width: 100%;
+  height: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  cursor: default;
+}
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+.prfToggleImg {
+  border: none;
+  transition: border 0.06s;
+}
+.prfToggleImg:hover {
+  border: 2px solid var(--leading-color);
+}
+.logo {
+  width: 30px;
+}
+.logoName {
+  color: var(--leading-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.profileMenuCon {
+  position: relative;
+}
+.profileMenu {
+  position: absolute;
+  top: 2.6rem;
+  right: 0rem;
+  background-color: var(--white-color);
+  width: fit-content;
+  height: fit-content;
+  border: var(--sub-border);
+  box-shadow: var(--box-shadow2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 9999;
+  border-radius: 3px;
+}
+
+.hideProfileMenu {
+  display: none;
+}
+.profileSubInfo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 150px;
+  text-wrap: nowrap;
+  padding: 1rem 1rem 0 1rem;
+}
+.prfDivider {
+  margin: 0.7rem 1rem;
+  height: 1.5px;
+  background-color: #343a40;
+}
+.logOutDivider {
+  margin: 1rem 0 0.5rem 0;
+}
+.prfList {
+  list-style: none;
+  padding: 0;
+}
+.prfList li {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.menIconsCon {
+  background-color: #e9ecef;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menItemText {
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.menItemText:hover {
+  font-weight: 600;
+}
+.prfImgCon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--leading-color);
+}
+.prfImgCon:active {
+  transform: scale(0.97);
+}
+.profileSubImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* media queries */
+@media (max-width: 767px) {
+  .logo {
+    width: 22px;
+  }
+  .logoName {
+    font-size: 1rem;
+  }
+  .logoSection {
+    gap: 0.2rem;
+  }
+  .prfImgCon {
+    width: 30px;
+    height: 30px;
+  }
+}
