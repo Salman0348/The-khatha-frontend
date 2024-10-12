@@ -47,8 +47,10 @@ const AddEntryForm = ({
 
   const handleAddEntry = async () => {
     try {
+      if (isAddEntryLoading) {
+        return;
+      }
       if (formRef.current.checkValidity()) {
-        setIsAddEntryLoadingg(true);
         let participantsIds = null;
         if (isCustomParticipantsSelected) {
           participantsIds = selectedParticipantsMemberIds;
@@ -66,6 +68,7 @@ const AddEntryForm = ({
         const entryPurpose = entryPurposeRef.current.value;
         const entryDescription = entryDescriptionRef.current?.value;
         const baseURL = import.meta.env.VITE_API_BASE_URL;
+        setIsAddEntryLoadingg(true);
         const response = await axios.post(
           `${baseURL}/api/v1/new-entry`,
           {
