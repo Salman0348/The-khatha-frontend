@@ -15,6 +15,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const profileMenuRef = useRef();
   const [editProfileElmnt, setEditProfileElmnt] = useState(null);
+  const [isLogoutLoading, setIsLogoutLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.user);
@@ -37,7 +38,11 @@ const Header = () => {
 
   //log out
   const handleLogOut = async () => {
+    if (isLogoutLoading) {
+      return;
+    }
     try {
+      setIsLogoutLoading(true);
       const baseURL = import.meta.env.VITE_API_BASE_URL;
       const response = await axios.post(
         `${baseURL}/api/v1/logout`,
@@ -56,6 +61,8 @@ const Header = () => {
         closeButton: true,
         autoClose: 5000,
       });
+    } finally {
+      setIsLogoutLoading(false);
     }
   };
 

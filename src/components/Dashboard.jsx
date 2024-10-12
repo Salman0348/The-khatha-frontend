@@ -35,6 +35,8 @@ const Dashboard = () => {
 
   const [historyController, setHistoryController] = useState(null);
 
+  const [isFetchingHistoryEntriesLoading, setIsFetchingHistoryEntriesLoading] =
+    useState(false);
   const [selectedGroup, setSelectedGroup] = useState(null);
 
   const [selectedGroupAdminId, setSelectedGroupAdminId] = useState(null);
@@ -149,6 +151,9 @@ const Dashboard = () => {
 
   //group history entries fetching
   const fetchtHistoryEntries = async () => {
+    if (isFetchingHistoryEntriesLoading) {
+      return;
+    }
     if (historyController) {
       historyController.abort();
     }
@@ -157,6 +162,7 @@ const Dashboard = () => {
 
     const selectedGroupId = selectedGroup?.group_id;
     try {
+      setIsFetchingHistoryEntriesLoading(true);
       const baseURL = import.meta.env.VITE_API_BASE_URL;
       const historyEntriesResponse = await axios.get(
         `${baseURL}/api/v1/history-entries`,
@@ -179,6 +185,8 @@ const Dashboard = () => {
           autoClose: 5000,
         });
       }
+    } finally {
+      setIsFetchingHistoryEntriesLoading(false);
     }
   };
 

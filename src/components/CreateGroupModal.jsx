@@ -56,6 +56,9 @@ function CreateGroupModal({
   };
 
   const handleAddMember = async () => {
+    if (isAddMemberLoading) {
+      return;
+    }
     if (members.length < 10) {
       setErrorMssg("");
       if (formRef.current.checkValidity()) {
@@ -100,6 +103,9 @@ function CreateGroupModal({
   };
 
   const handleCreateGroup = async () => {
+    if (isCreateGroupLoading) {
+      return;
+    }
     if (members.length > 0) {
       //i think we don't need this check as it is already done in Create Group button,for now ignore it
       const formData = new FormData();

@@ -31,6 +31,9 @@ const DeleteGroupModal = ({ show, setShow, groupInfo }) => {
   };
 
   const handleDeleteGroup = async () => {
+    if (isDeleteLoading) {
+      return;
+    }
     if (grpNameInputRef.current.value !== groupInfo.group_name) {
       setGrpNameMatchesErr("name does not match");
     } else {

@@ -45,6 +45,9 @@ const SignIn = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (status === "loading") {
+      return;
+    }
     if (formRef.current.checkValidity()) {
       signInCredentials.email = email;
       signInCredentials.password = password;

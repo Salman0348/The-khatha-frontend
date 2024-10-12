@@ -43,6 +43,9 @@ const EditGroupModall = ({
 
   const handleSaveChanges = async (e) => {
     e.preventDefault();
+    if (isSaveChangesLoading) {
+      return;
+    }
     if (formRef.current.checkValidity()) {
       if (
         (!imageFile &&

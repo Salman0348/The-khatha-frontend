@@ -51,6 +51,9 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (status === "loading") {
+      return;
+    }
     localStorage.removeItem("emailVerification"); //removing the previous verified status
     if (formRef.current.checkValidity()) {
       signUpCredentials.username = username;
@@ -85,6 +88,9 @@ const SignUp = () => {
   }, [status, verificationSent]);
 
   const handleResendEmail = async () => {
+    if (isResendEmailLoading) {
+      return;
+    }
     setVerificationSent(false);
     setIsResendEmailSent(false);
     setErr("");

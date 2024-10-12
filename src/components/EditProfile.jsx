@@ -77,6 +77,9 @@ function EditProfile({ setIsOpen }) {
   };
 
   const handleSaveChanges = async () => {
+    if (isSaveChangesLoading) {
+      return;
+    }
     if (formRef.current.checkValidity()) {
       if (oldPassword && !newPassword) {
         return setError(oldPasswordButNotNewPasswordErr);
