@@ -232,8 +232,8 @@ const SignUp = () => {
                     ""
                   )}
                   {message}
-                  <p>
-                    Didn’t receive it?
+                  <p className={styles.lowerResendEmailPart}>
+                    <span>Didn’t receive it? It may take up to 5 minutes.</span>
                     <span
                       onClick={handleResendEmail}
                       className={styles.resendEmailSpan}
