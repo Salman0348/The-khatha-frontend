@@ -5,6 +5,7 @@ import { IoIosPricetags } from "react-icons/io";
 import { LuFileText } from "react-icons/lu";
 import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import formatToLocalTime from "../../utils/dateTimeFormat.util";
 
 const MemberItem = ({ member, selectedGroupAdminId }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,7 @@ const MemberItem = ({ member, selectedGroupAdminId }) => {
               <p className={styles.bodyFirstRow}>
                 <span className={styles.lstEntryHdng}>Last Entry</span>
                 <span className={styles.lastEntryTime}>
-                  {member_last_entry_time}
+                  {formatToLocalTime(member_last_entry_time)}
                 </span>
               </p>
               <div className={styles.lastEntryDetail}>

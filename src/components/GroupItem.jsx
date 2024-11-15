@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../css-modules/GroupItem.module.css";
 import { HiUsers } from "react-icons/hi";
-import formatToPakistaniTime from "../../utils/dateTimeFormat.util";
+import formatToLocalTime from "../../utils/dateTimeFormat.util";
 import { useSelector } from "react-redux";
 import GroupItemChangePopup from "./GroupItemChangePopup";
 import EditGroupModall from "./EditGroupModall";
@@ -139,7 +139,7 @@ const GroupItem = ({ group, getSelectedGroup, selectedGroup }) => {
               </span>
             </p>
             <p className={styles.dateAndTime}>
-              {formatToPakistaniTime(last_entry_date)}
+              {formatToLocalTime(last_entry_date)}
             </p>
           </div>
         )}

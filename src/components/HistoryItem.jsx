@@ -8,6 +8,7 @@ import styles from "../css-modules/HistoryItem.module.css";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import extractMemberNames from "../../utils/extractMemberNames.util";
+import formatToLocalTime from "../../utils/dateTimeFormat.util";
 
 const HistoryItem = ({ historyItem, selectedGroupMembersIdAndName }) => {
   const loggedInUserInfo = useSelector((state) => state.user.userInfo);
@@ -55,7 +56,9 @@ const HistoryItem = ({ historyItem, selectedGroupMembersIdAndName }) => {
     <div className={styles.historyItem}>
       <div className={styles.itemHeading}>
         <span className={styles.entryNo}>Entry No: {entry_no}</span>
-        <span className={styles.entryTime}>{entry_date}</span>
+        <span className={styles.entryTime}>
+          {formatToLocalTime(entry_date)}
+        </span>
       </div>
       <div className={styles.itemSubDiv}>
         <div>
