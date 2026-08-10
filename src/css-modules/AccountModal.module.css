@@ -1,0 +1,65 @@
+.accountsSection {
+  margin-top: 25px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.accountForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.accountInput {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.accountInput label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.accountInput input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.accountInput input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+.accountInput input::placeholder {
+  color: #999;
+}
+
+.accountError {
+  margin: 10px 0 0;
+  color: #dc3545;
+  font-size: 14px;
+}
+
+.accountActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.accountActions button {
+  min-width: 90px;
+}
+
+.accountsSection button:disabled {
+  cursor: not-allowed;
+}

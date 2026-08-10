@@ -1,0 +1,63 @@
+.card {
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid;
+  border-left: 6px solid;
+  background: white;
+  box-shadow: var(--box-shadow2);
+  transition: 0.2s;
+}
+.exceededAmountSpan {
+  font-weight: bold;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.header h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.card p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.high {
+  border-color: #dc3545;
+}
+
+.high .icon {
+  color: #dc3545;
+}
+
+.medium {
+  border-color: #ffc107;
+}
+
+.medium .icon {
+  color: #ffc107;
+}
+
+.low {
+  border-color: #198754;
+}
+
+.low .icon {
+  color: #198754;
+}

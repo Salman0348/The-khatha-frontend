@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../css-modules/Header.module.css";
 import { IoMdPerson } from "react-icons/io";
+import { MdAccountBalanceWallet } from "react-icons/md";
 import { MdOutlineLogout } from "react-icons/md";
 import EditProfile from "./EditProfile";
+import EditAccountInfo from "./EditAccountInfo";
+
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -49,7 +52,7 @@ const Header = () => {
         {},
         {
           withCredentials: true,
-        }
+        },
       );
       if (response.status === 200) {
         dispatch(logOutSuccess());
@@ -125,6 +128,14 @@ const Header = () => {
                 </div>
                 <span className={styles.menItemText}>
                   <EditProfile setIsOpen={setIsOpen} />
+                </span>
+              </li>
+              <li>
+                <div className={styles.menIconsCon}>
+                  <MdAccountBalanceWallet size={20} />
+                </div>
+                <span className={styles.menItemText}>
+                  <EditAccountInfo setIsOpen={setIsOpen} />
                 </span>
               </li>
               <hr className={styles.logOutDivider} />

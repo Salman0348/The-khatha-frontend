@@ -2,25 +2,32 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import extractMemberNames from "./extractMemberNames.util";
 
+// helper function for date and time formatting
+const formatDateTime = (date) =>
+  date
+    ? new Date(date).toLocaleString(undefined, {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      })
+    : "";
+
+// pdf generation function
 const generatePDF = (
   groupName,
   historyItems,
-  selectedGroupMembersIdAndName
+  selectedGroupMembersIdAndName,
 ) => {
   const pdf = new jsPDF();
 
   const url = import.meta.env.VITE_API_FRONT_END_BASE_URL;
   const websiteUrl = url;
   const websiteText = "Explore Group Expense Management at TheKhatha";
-  const dateTime = new Date().toLocaleString(undefined, {
-    hour12: true,
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
+  const dateTime = formatDateTime(new Date());
 
   // Function to add footer link to each page
   const addFooterLink = (pdf) => {
@@ -49,6 +56,7 @@ const generatePDF = (
     { header: "Purpose", dataKey: "purpose" },
     { header: "Member", dataKey: "member" },
     { header: "Participants", dataKey: "participants" },
+    { header: "Category", dataKey: "category" },
     { header: "Date and Time", dataKey: "dateTime" },
     { header: "Description", dataKey: "description" },
   ];
@@ -79,7 +87,7 @@ const generatePDF = (
     if (!isAllMembersAreParticipants) {
       participantNames = extractMemberNames(
         selectedGroupMembersIdAndName,
-        participant_member_ids
+        participant_member_ids,
       );
     }
 
@@ -95,7 +103,8 @@ const generatePDF = (
             ? "All"
             : participantNames.join(", ")
           : "",
-      dateTime: item.entry_date,
+      category: item.entry_category,
+      dateTime: formatDateTime(item.entry_date),
       description: item.entry_description,
     };
   });

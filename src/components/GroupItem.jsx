@@ -157,7 +157,7 @@ const GroupItem = ({ group, getSelectedGroup, selectedGroup }) => {
           title={
             user_amount_owed > 0
               ? `Amount you are owed: ${Math.abs(
-                  user_amount_owed
+                  user_amount_owed,
                 )} ${currencyName}`
               : `Amount you owe: ${Math.abs(user_amount_owed)} ${currencyName}`
           }

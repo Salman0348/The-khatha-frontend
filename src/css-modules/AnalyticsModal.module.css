@@ -1,0 +1,363 @@
+.forecastSection {
+  margin-bottom: 30px;
+}
+
+.analyticsSection {
+  border-top: 1px solid #dee2e6;
+  padding-top: 25px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+/* ENHANCED AI LABEL ONLY */
+.aiLabelDiv {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.15rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+  animation: aiPulse 2s ease-in-out infinite;
+}
+
+/* Shimmer effect on AI label */
+.aiLabelDiv::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+/* Spin animation for AI icon inside label */
+.aiLabelDiv svg {
+  animation: aiSpin 4s linear infinite;
+}
+
+/*  Small pulsing dot */
+.aiLabelDiv::after {
+  content: "";
+  display: inline-block;
+  width: 8%;
+  height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+/* ================================
+   Loading / Error
+================================ */
+
+.messageContainer {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+}
+
+.errorContainer {
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8d7da;
+  color: #842029;
+  text-align: center;
+}
+
+/* ================================
+   Forecast Cards
+================================ */
+
+.forecastContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.forecastCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 110px;
+  padding: 18px;
+
+  border: var(--sub-border);
+  border-radius: 10px;
+
+  background-color: #f8f9fa;
+  box-shadow: var(--box-shadow2);
+}
+.forecastCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+.cardLabel {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.3;
+}
+
+.cardValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.cardSubtext {
+  display: block;
+  font-size: 0.75rem;
+  color: #6c757d;
+  line-height: 1.2;
+}
+
+/* ================================
+   Analytics Header
+================================ */
+
+.analyticsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.analyticsHeader .sectionTitle {
+  margin-bottom: 0;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.filterSelect {
+  min-width: 150px;
+  padding: 8px 12px;
+
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+
+  background-color: #fff;
+  color: #212529;
+
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+/* ================================
+   Chart Placeholder
+================================ */
+
+.chartPlaceholder {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  border: 1px dashed #adb5bd;
+  border-radius: 10px;
+
+  background-color: #f8f9fa;
+
+  text-align: center;
+  color: #6c757d;
+}
+
+.chartPlaceholder p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.chartPlaceholder small {
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* ===============================
+  accounts section
+  ================================ */
+
+.accountsSection {
+  margin-top: 24px;
+}
+
+.sectionTitle {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accountsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accountCard {
+  padding: 16px;
+  border: var(--sub-border);
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow2);
+}
+.accountCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+.memberName {
+  margin: 0 0 12px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.accountDetail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.accountDetail:last-child {
+  margin-bottom: 0;
+}
+
+.accountLabel {
+  min-width: 130px;
+  font-weight: 600;
+}
+
+.accountValue {
+  color: #555;
+}
+
+.noAccount {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* ================================
+   Footer Button
+================================ */
+
+.closeBtn {
+  min-width: 90px;
+}
+
+/* ================================
+   Tablet
+================================ */
+
+@media (max-width: 768px) {
+  .forecastContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analyticsHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterContainer {
+    width: 100%;
+  }
+
+  .filterSelect {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 480px) {
+  .forecastContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .forecastCard {
+    min-height: 90px;
+  }
+
+  .chartPlaceholder {
+    min-height: 200px;
+    padding: 20px;
+  }
+}

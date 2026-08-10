@@ -1,0 +1,102 @@
+.analyticsSection {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.analyticsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.analyticsHeader h5 {
+  margin: 0;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.filterContainer select {
+  padding: 7px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.navigationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.navigationContainer button {
+  padding: 7px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.navigationContainer button:hover:not(:disabled) {
+  background-color: #f8f9fa;
+}
+
+.navigationContainer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navigationContainer span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.chartContainer {
+  width: 100%;
+  height: 300px;
+}
+
+.chartMessage {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6c757d;
+  text-align: center;
+}
+
+.errorContainer {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+@media (max-width: 768px) {
+  .analyticsHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+  }
+
+  .navigationContainer {
+    gap: 8px;
+  }
+
+  .navigationContainer button {
+    padding: 6px 10px;
+  }
+}

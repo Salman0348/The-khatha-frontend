@@ -1,0 +1,88 @@
+.messageContainer {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.messageContainer p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.spinner {
+  margin-bottom: 10px;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 20px 10px;
+  color: red;
+}
+
+.successMessage {
+  font-weight: 600;
+}
+
+.settlementContainer {
+  width: 100%;
+}
+.settlementContainer {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.description {
+  margin-bottom: 20px;
+  color: #666;
+  text-align: center;
+}
+
+.settlementItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow1);
+}
+
+.settlementItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+.settlementItemRed {
+  border-color: red;
+}
+.settlementItemGreen {
+  border-color: green;
+}
+
+.memberInfo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.memberName {
+  font-weight: 600;
+}
+
+.paysText {
+  color: #666;
+}
+
+.amount {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.closeBtn {
+  min-width: 80px;
+}

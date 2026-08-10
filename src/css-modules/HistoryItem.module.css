@@ -38,3 +38,103 @@
 .generatePdfBtn:active {
   transform: scale(0.97);
 }
+.categoryDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ENHANCED AI LABEL ONLY */
+.aiLabelDiv {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.15rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+  animation: aiPulse 2s ease-in-out infinite;
+}
+
+/* Shimmer effect on AI label */
+.aiLabelDiv::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+/* Spin animation for AI icon inside label */
+.aiLabelDiv svg {
+  animation: aiSpin 4s linear infinite;
+}
+
+/* Pulse animation for label glow */
+@keyframes aiPulse {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+  }
+  50% {
+    box-shadow: 0 2px 16px rgba(99, 102, 241, 0.5);
+  }
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* Spin animation for AI icon */
+@keyframes aiSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  Small pulsing dot */
+.aiLabelDiv::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}

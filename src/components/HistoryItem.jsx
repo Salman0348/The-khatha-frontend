@@ -3,6 +3,7 @@ import { IoIosPricetags } from "react-icons/io";
 import { LuFileText } from "react-icons/lu";
 import { IoPerson } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa";
+import { MdCategory } from "react-icons/md";
 
 import styles from "../css-modules/HistoryItem.module.css";
 import { useSelector } from "react-redux";
@@ -23,7 +24,9 @@ const HistoryItem = ({ historyItem, selectedGroupMembersIdAndName }) => {
     entry_person,
     entry_date,
     entry_description,
+    entry_category,
   } = historyItem;
+
   let { participant_member_ids } = historyItem;
   let isAllMembersAreParticipants = false;
   try {
@@ -48,7 +51,7 @@ const HistoryItem = ({ historyItem, selectedGroupMembersIdAndName }) => {
   if (!isAllMembersAreParticipants) {
     participantNames = extractMemberNames(
       selectedGroupMembersIdAndName,
-      participant_member_ids
+      participant_member_ids,
     );
   }
 
@@ -105,6 +108,18 @@ const HistoryItem = ({ historyItem, selectedGroupMembersIdAndName }) => {
           <span>{entry_description}</span>
         </div>
       )}
+      {entry_category !== ("" || null) && (
+        <div className={`${styles.itemSubDiv} ${styles.categoryDiv}`}>
+          <div>
+            <MdCategory size={18} className="me-2" />
+            <span>{entry_category}</span>
+          </div>
+          <div className={styles.aiLabelDiv}>
+            <span>AI categorized</span>
+          </div>
+        </div>
+      )}
+
       <hr className={styles.dividerline} />
     </div>
   );
