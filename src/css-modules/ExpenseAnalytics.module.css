@@ -88,10 +88,6 @@
     align-items: stretch;
   }
 
-  .filterContainer {
-    flex-direction: column;
-  }
-
   .navigationContainer {
     gap: 8px;
   }

@@ -359,7 +359,7 @@ const Dashboard = () => {
         <div
           className={`${styles.membersSection} ${
             showHistory
-              ? styles.memberSectionSmallWidth
+              ? styles.membersSectionSmallWidth
               : styles.memberSectionLargeWidth
           }`}
         >
@@ -430,7 +430,7 @@ const Dashboard = () => {
             )}
           </div>
         )}
-        {/* show and hide history button */}
+        {/* Hide history button */}
         {selectedGroup && showHistory && (
           <button onClick={toggleHistory} className={styles.historyBtn}>
             {
@@ -444,6 +444,8 @@ const Dashboard = () => {
           </button>
         )}
       </div>
+
+      {/* modals */}
       {/* settlement modal */}
       {showSettlementModal && (
         <SettlementModal

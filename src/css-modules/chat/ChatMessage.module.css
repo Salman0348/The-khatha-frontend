@@ -1,0 +1,36 @@
+.messageContainer {
+  max-width: 75%;
+  padding: 8px 10px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.otherMessage {
+  align-self: flex-start;
+  background: #f1f1f1;
+}
+
+.ownMessage {
+  align-self: flex-end;
+  background: #d9fdd3;
+}
+
+.senderName {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.message {
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #777;
+  margin-top: 4px;
+  text-align: right;
+}

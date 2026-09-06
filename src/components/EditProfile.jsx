@@ -139,7 +139,7 @@ function EditProfile({ setIsOpen }) {
               "Content-Type": "multipart/form-data",
             },
             withCredentials: true,
-          }
+          },
         );
         if (response.status === 200) {
           setIsSaveChangesLoading(false);
@@ -210,6 +210,7 @@ function EditProfile({ setIsOpen }) {
               icon={FaUserCircle}
             />
             <div className={styles.inputItem}>
+              <p>{userInfo.userEmail}</p>
               <input
                 type="text"
                 name="user-name"

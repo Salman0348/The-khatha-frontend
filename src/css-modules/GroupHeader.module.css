@@ -144,6 +144,49 @@
   background: var(--attention-color);
 }
 
+/* added for chates button */
+.chatContainer {
+  position: relative;
+}
+
+.chatButton {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatIcon {
+  font-size: 22px;
+}
+
+.unreadBadge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  border-radius: 10px;
+
+  background-color: red;
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* media qureis */
 @media (max-width: 590px) {
   .groupImgDiv {
@@ -154,7 +197,10 @@
     width: 60%;
   }
 }
-@media (min-width: 768px) and (max-width: 1050px) {
+@media (min-width: 768px) and (max-width: 1100px) {
+  .outerDiv {
+    width: 60%;
+  }
   .grpNameSpan {
     font-size: 1rem;
     width: 37%;
@@ -164,6 +210,9 @@
   }
 }
 @media (max-width: 767px) {
+  .outerDiv {
+    width: 100%;
+  }
   .backBtnDiv {
     width: 1.5rem;
   }

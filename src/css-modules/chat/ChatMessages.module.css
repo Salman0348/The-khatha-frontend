@@ -1,0 +1,23 @@
+.messagesContainer {
+  flex: 1;
+
+  padding: 15px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.status,
+.empty {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+}

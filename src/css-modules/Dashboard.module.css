@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
 }
-.memberSectionSmallWidth {
+.membersSectionSmallWidth {
   width: 45%;
 }
 .memberSectionLargeWidth {
@@ -89,7 +89,7 @@
 }
 .historyBtn {
   position: absolute;
-  right: 12rem;
+  right: 0.5rem;
   top: 12px;
   z-index: 1;
   width: 120px;
@@ -194,10 +194,10 @@
     max-width: 360px;
     background-color: var(--white-color);
   }
-  .groupSection {
+  .groupsSection {
     width: 40%;
   }
-  .memberSectionSmallWidth,
+  .membersSectionSmallWidth,
   .memberSectionLargeWidth {
     width: 60%;
   }
@@ -234,14 +234,14 @@
     margin: 4rem auto 8rem;
   }
   /* For the mobile view, we hide one section at a time */
-  .showGroups .memberSection {
+  .showGroups .membersSection {
     display: none;
   }
-  .showMembers .groupSection {
+  .showMembers .groupsSection {
     display: none;
   }
-  .groupSection,
-  .memberSectionSmallWidth,
+  .groupsSection,
+  .membersSectionSmallWidth,
   .memberSectionLargeWidth {
     width: 100%;
   }

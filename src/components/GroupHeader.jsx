@@ -5,6 +5,11 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoSparkles } from "react-icons/io5";
 import { fetchInsights } from "../apis";
 import InsightCard from "./InsightCard";
+import { BsChatDots } from "react-icons/bs";
+
+import Chat from "./chat/Chat";
+
+import { useGetUnreadCountQuery } from "../store/chatApiSlice";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -29,6 +34,8 @@ const GroupHeader = ({
   const [showInsights, setShowInsights] = useState(false);
   const [loadingInsights, setLoadingInsights] = useState(false);
   const [insightsError, setInsightsError] = useState("");
+
+  const [showChat, setShowChat] = useState(false);
 
   const menuRef = useRef();
   const insightsRef = useRef();
@@ -98,6 +105,15 @@ const GroupHeader = ({
     };
   }, []);
 
+  // Getting unread messages count
+  const { data: unreadData } = useGetUnreadCountQuery(selectedGroupId, {
+    skip: !selectedGroupId,
+    pollingInterval: 10000,
+    // ten seconds delay
+  });
+
+  const unreadCount = unreadData?.unreadCount || 0;
+
   return (
     <div className={styles.outerDiv}>
       <div className={styles.leftSection}>
@@ -125,6 +141,32 @@ const GroupHeader = ({
 
       {/* right section for Insights and three dot button */}
       <div className={styles.rightSection}>
+        {/* Chat button */}
+        <div className={styles.chatContainer}>
+          <button
+            type="button"
+            className={styles.chatButton}
+            onClick={() => setShowChat(true)}
+            title="Group Chat"
+          >
+            <BsChatDots className={styles.chatIcon} />
+
+            {unreadCount > 0 && (
+              <span className={styles.unreadBadge}>
+                {unreadCount > 99 ? "99+" : unreadCount}
+              </span>
+            )}
+          </button>
+
+          {showChat && (
+            <Chat
+              groupId={selectedGroupId}
+              loggedinMemberId={loggedinMemberId}
+              onClose={() => setShowChat(false)}
+            />
+          )}
+        </div>
+
         {/* Insights div */}
         <div className={styles.insightsContainer} ref={insightsRef}>
           <IoSparkles
@@ -132,6 +174,7 @@ const GroupHeader = ({
             onClick={() => handleInsightsButton()}
             title="Insights"
           />
+
           {showInsights && (
             <div className={styles.insightsPopUpContainer}>
               <h6 className={styles.InsightsHeader}>

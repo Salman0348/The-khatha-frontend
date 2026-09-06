@@ -1,0 +1,25 @@
+.chatHeader {
+  height: 50px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ddd;
+
+  font-weight: 600;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+}
