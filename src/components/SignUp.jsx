@@ -96,6 +96,11 @@ const SignUp = () => {
         navigate("/signin");
       }
     } else if (status === "signupSucceededAndEmailVerified") {
+      toast.success("Account created successfully", {
+        closeButton: true,
+        autoClose: 5000,
+      });
+      dispatch(statusChange("idle")); //back to default
       navigate("/signin");
     } else if (status === "failed") {
       toast.error(error, {
