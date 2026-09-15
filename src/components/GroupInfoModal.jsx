@@ -52,19 +52,24 @@ const GroupInfoModal = ({
         <section>
           <h4 className={styles.sectionTitle}>Budget</h4>
 
-          <div className="d-flex align-items-center gap-2">
-            <label htmlFor="budgetInput">Your Budget</label>
+          <div className={styles.budgetContainer}>
+            <label htmlFor="budgetInput" className={styles.budgetLabel}>
+              Your Budget
+            </label>
+
             <input
               type="number"
               value={budget}
               id="budgetInput"
               onChange={(e) => setBudget(e.target.value)}
+              className={styles.budgetInput}
             />
 
             <Button
               variant="primary"
               onClick={handleBudgetChange}
               disabled={loading || budget === "" || isUnchanged}
+              className={styles.budgetButton}
             >
               {loading ? (
                 <>
@@ -72,7 +77,7 @@ const GroupInfoModal = ({
                     as="span"
                     animation="border"
                     size="sm"
-                    className="me-2"
+                    className={styles.spinner}
                   />
                   Updating...
                 </>

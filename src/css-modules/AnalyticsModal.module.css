@@ -361,3 +361,49 @@
     padding: 20px;
   }
 }
+
+/* group ifo modal */
+.budgetContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.budgetLabel {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.budgetInput {
+  width: 120px;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.budgetInput:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+.budgetButton {
+  white-space: nowrap;
+}
+
+.spinner {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .budgetContainer {
+    width: 100%;
+  }
+
+  .budgetInput {
+    flex: 1;
+    min-width: 0;
+  }
+}

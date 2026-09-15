@@ -15,6 +15,8 @@
 
   border: 1px solid #ccc;
   border-radius: 20px;
+  min-width: 0;
+  width: 100%;
 
   padding: 8px 12px;
 
@@ -39,11 +41,4 @@
 .inputContainer button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-
-@media (max-width: 430px) {
-  .inputContainer {
-    width: 90%;
-    margin-right: 1rem;
-  }
 }
