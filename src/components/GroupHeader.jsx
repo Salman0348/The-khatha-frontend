@@ -6,6 +6,11 @@ import { IoSparkles } from "react-icons/io5";
 import { fetchInsights } from "../apis";
 import InsightCard from "./InsightCard";
 import { BsChatDots } from "react-icons/bs";
+import { MdAccountBalanceWallet } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { FiMinimize2 } from "react-icons/fi";
+import { FiInfo } from "react-icons/fi";
+import { FiBarChart2 } from "react-icons/fi";
 
 import Chat from "./chat/Chat";
 
@@ -210,14 +215,24 @@ const GroupHeader = ({
                 className={styles.dropdownItem}
                 onClick={handleToggleHistory}
               >
-                {showHistory ? "Hide History" : "History"}
+                <div className={styles.buttonContent}>
+                  <span className={styles.buttonIcon}>
+                    <FaHistory size={20} />
+                  </span>
+                  {showHistory ? "Hide History" : "History"}
+                </div>
               </button>
               {/* minimize debts */}
               <button
                 className={styles.dropdownItem}
                 onClick={() => handleDedtMinimization(selectedGroupId)}
               >
-                Minimize Debts
+                <div className={styles.buttonContent}>
+                  <span className={styles.buttonIcon}>
+                    <FiMinimize2 size={20} />
+                  </span>
+                  Minimize Debts
+                </div>
               </button>
 
               {/* show analytics */}
@@ -225,7 +240,12 @@ const GroupHeader = ({
                 className={styles.dropdownItem}
                 onClick={() => handleShowAnalytics(selectedGroupId)}
               >
-                Analytics
+                <div className={styles.buttonContent}>
+                  <span className={styles.buttonIcon}>
+                    <FiBarChart2 size={20} />
+                  </span>
+                  Analytics
+                </div>
               </button>
               {/* show group info */}
               <button
@@ -234,7 +254,12 @@ const GroupHeader = ({
                   handleGroupInfo(selectedGroupId, loggedinMemberId)
                 }
               >
-                Group Info
+                <div className={styles.buttonContent}>
+                  <span className={styles.buttonIcon}>
+                    <FiInfo size={20} />
+                  </span>
+                  Group Info
+                </div>
               </button>
             </div>
           )}

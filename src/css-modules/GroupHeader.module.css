@@ -187,6 +187,21 @@
   justify-content: center;
 }
 
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.buttonIcon {
+  background-color: #e9ecef;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* media qureis */
 @media (max-width: 590px) {
   .groupImgDiv {
