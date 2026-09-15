@@ -88,6 +88,11 @@ const SignUp = () => {
       } else {
         // Production:
         // Account was created directly
+        toast.success("Account created successfully", {
+          closeButton: true,
+          autoClose: 5000,
+        });
+        dispatch(statusChange("idle")); //back to default
         navigate("/signin");
       }
     } else if (status === "signupSucceededAndEmailVerified") {
