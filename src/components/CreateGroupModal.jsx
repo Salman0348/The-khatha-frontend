@@ -9,6 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { HiUsers } from "react-icons/hi";
+import { FiBarChart2 } from "react-icons/fi";
 
 function CreateGroupModal({
   showCreateGroupModal,
@@ -71,7 +72,7 @@ function CreateGroupModal({
             {
               email,
             },
-            { withCredentials: true }
+            { withCredentials: true },
           );
           if (response.status === 200) {
             if (!doesMemberAlreadyExist(response.data.user.id)) {
@@ -126,7 +127,7 @@ function CreateGroupModal({
               "Content-Type": "multipart/form-data",
             },
             withCredentials: true,
-          }
+          },
         );
         if (response.status === 200) {
           setImageFile(null);
@@ -161,12 +162,10 @@ function CreateGroupModal({
           setIsGroupsDropDownOpen(false);
         }}
         className={styles.creatBtnTxt}
-        style={{
-          backgroundColor: "var(--white-color)",
-          color: "black",
-          cursor: "pointer",
-        }}
       >
+        <span className={styles.buttonIcon}>
+          <FiBarChart2 size={20} />
+        </span>
         Create New Group
       </div>
 

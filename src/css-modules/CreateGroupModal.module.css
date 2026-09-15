@@ -1,8 +1,11 @@
 .creatBtnTxt {
-  transition: all 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 .creatBtnTxt:hover {
-  font-weight: 600;
+  background: var(--attention-color);
 }
 .image {
   width: 80px;
@@ -138,6 +141,21 @@
 .confirGroupCreationFieldsTitles {
   font-weight: 500;
   margin-right: 0.3rem;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.buttonIcon {
+  background-color: #e9ecef;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* media qureries */
