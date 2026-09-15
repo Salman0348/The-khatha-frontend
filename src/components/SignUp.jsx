@@ -51,14 +51,21 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (status === "loading") {
       return;
     }
-    localStorage.removeItem("emailVerification"); //removing the previous verified status
+
+    // Only clear verification state during development
+    if (import.meta.env.DEV) {
+      localStorage.removeItem("emailVerification");
+    }
+
     if (formRef.current.checkValidity()) {
       signUpCredentials.username = username;
       signUpCredentials.email = email;
       signUpCredentials.password = password;
+
       if (password !== confirmPassword) {
         setErr("Passwords do not match");
         return;
@@ -74,8 +81,15 @@ const SignUp = () => {
 
   useEffect(() => {
     if (status === "signupSucceeded") {
-      //flag:i am using signupSucceeded for sending verification email after creating pending_user
-      setVerificationSent(true);
+      if (import.meta.env.DEV) {
+        // Development:
+        // Account is waiting for email verification
+        setVerificationSent(true);
+      } else {
+        // Production:
+        // Account was created directly
+        navigate("/signin");
+      }
     } else if (status === "signupSucceededAndEmailVerified") {
       navigate("/signin");
     } else if (status === "failed") {
@@ -83,11 +97,16 @@ const SignUp = () => {
         closeButton: true,
         autoClose: 5000,
       });
+
       dispatch(statusChange("idle"));
     }
-  }, [status, verificationSent]);
+  }, [status, error, navigate, dispatch]);
 
   const handleResendEmail = async () => {
+    if (!import.meta.env.DEV) {
+      return;
+    }
+
     if (isResendEmailLoading) {
       return;
     }
@@ -100,7 +119,7 @@ const SignUp = () => {
         const baseURL = import.meta.env.VITE_API_BASE_URL;
         const response = await axios.post(
           `${baseURL}/api/v1/resend-verification`,
-          { email }
+          { email },
         );
 
         if (response.status === 200) {
@@ -211,39 +230,46 @@ const SignUp = () => {
               value={confirmPassword}
               required
             />
-            {isResendEmailLoading ? (
-              <div className={styles.isResendEmailSpinnerDiv}>
-                Resend email is on its way
-                <Spinner
-                  animation="grow"
-                  role="status"
-                  className={styles.isResendEmailSpinner}
-                />
-              </div>
-            ) : (
-              (verificationSent ||
-                status === "USER_EXISTS_IN_PENDING_USER") && (
-                <div className={styles.verificationEmailSentMssgP}>
-                  {isResendEmailSent ? (
-                    "Email resent! "
-                  ) : status === "USER_EXISTS_IN_PENDING_USER" ? (
-                    <p>Verification pending for this email.</p>
-                  ) : (
-                    ""
-                  )}
-                  {message}
-                  <p className={styles.lowerResendEmailPart}>
-                    <span>Didn’t receive it? It may take up to 5 minutes.</span>
-                    <span
-                      onClick={handleResendEmail}
-                      className={styles.resendEmailSpan}
-                    >
-                      Resend Verification
-                    </span>
-                  </p>
+
+            {import.meta.env.DEV &&
+              (isResendEmailLoading ? (
+                <div className={styles.isResendEmailSpinnerDiv}>
+                  Resend email is on its way
+                  <Spinner
+                    animation="grow"
+                    role="status"
+                    className={styles.isResendEmailSpinner}
+                  />
                 </div>
-              )
-            )}
+              ) : (
+                (verificationSent ||
+                  status === "USER_EXISTS_IN_PENDING_USER") && (
+                  <div className={styles.verificationEmailSentMssgP}>
+                    {isResendEmailSent ? (
+                      "Email resent! "
+                    ) : status === "USER_EXISTS_IN_PENDING_USER" ? (
+                      <p>Verification pending for this email.</p>
+                    ) : (
+                      ""
+                    )}
+
+                    {message}
+
+                    <p className={styles.lowerResendEmailPart}>
+                      <span>
+                        Didn’t receive it? It may take up to 5 minutes.
+                      </span>
+
+                      <span
+                        onClick={handleResendEmail}
+                        className={styles.resendEmailSpan}
+                      >
+                        Resend Verification
+                      </span>
+                    </p>
+                  </div>
+                )
+              ))}
 
             {err ? <p className={styles.error}>{err}</p> : ""}
             <button type="submit" value="Sign Up" className={styles.SignInBtn}>

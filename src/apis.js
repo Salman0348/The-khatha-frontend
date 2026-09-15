@@ -42,7 +42,7 @@ const signUp = (signUpCredentials) => async (dispatch) => {
   dispatch(signUpRequest());
   try {
     const response = await axios.post(signUpUrl, signUpCredentials);
-    if (response.status === 200) {
+    if (response.status >= 200 && response.status < 300) {
       dispatch(signUpSuccess());
     }
   } catch (error) {
@@ -50,7 +50,7 @@ const signUp = (signUpCredentials) => async (dispatch) => {
       if (error.response.data.error === "FIELDS_REQUIRED") {
         dispatch(signUpFailure("All fieds are required"));
       } else if (error.response.data.error === "NAME_LIMIT_EXCEEDED") {
-        dispatch(signInFailure("Username cannot exceed 20 characters"));
+        dispatch(signUpFailure("Username cannot exceed 20 characters"));
       }
     } else if (error.response && error.response.status === 409) {
       if (error.response.data.error === "USER_EXISTS") {
