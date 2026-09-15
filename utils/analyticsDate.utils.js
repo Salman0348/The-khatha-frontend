@@ -57,11 +57,7 @@ export const moveWindow = (startDate, period, direction) => {
 
 // Formats a Date object into a string in the format "YYYY-MM-DDTHH:mm:ss"
 export const formatDateTime = (date) => {
-  if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
-    throw new Error("Invalid date");
-  }
-
-  return date.toISOString();
+  return date.toISOString().slice(0, 19);
 };
 
 // Returns a human-readable label for the analytics time window based on the period
