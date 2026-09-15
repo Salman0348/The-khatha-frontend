@@ -9,7 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { HiUsers } from "react-icons/hi";
-import { FiBarChart2 } from "react-icons/fi";
+import { FiPlus } from "react-icons/fi";
 
 function CreateGroupModal({
   showCreateGroupModal,
@@ -164,7 +164,7 @@ function CreateGroupModal({
         className={styles.creatBtnTxt}
       >
         <span className={styles.buttonIcon}>
-          <FiBarChart2 size={20} />
+          <FiPlus size={20} />
         </span>
         Create New Group
       </div>
